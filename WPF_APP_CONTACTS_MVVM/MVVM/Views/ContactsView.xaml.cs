@@ -27,7 +27,7 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.Views
 
         {
             InitializeComponent();
-
+        
 
         }
 
@@ -38,6 +38,7 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.Views
             var button = (Button)sender;
             var contact = (
                 ContactModel)button.DataContext;
+            Debug.WriteLine(contact);
             ContactService.RemoveFromList(contact);
             //  Guid context1 = (Guid)contact;
             // Guid contextRemove = context1;
