@@ -1,60 +1,65 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 using WPF_APP_CONTACTS_MVVM.MVVM.Models;
 
 namespace WPF_APP_CONTACTS_MVVM.Services
 {
-    public static class ContactService 
+    public static class ContactService
     {
-        static private ObservableCollection<ContactModel> contactList = new ObservableCollection<ContactModel>();
 
-        public static ObservableCollection<ContactModel> ContactList { get { return Contacts;  }  set =>  contactList = Contacts; } 
-        public static ObservableCollection<ContactModel> Contacts { get; set; } = null!;
+        //private static readonly FileService fileService ;
+        private static ObservableCollection<ContactModel> contacts;
+
+
+        private static readonly FileService fileService = new FileService($@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\contacts.json");
 
 
         static ContactService()
         {
-            Contacts = new ObservableCollection<ContactModel>();
-            FileService.FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\contacts.json";
-
-          
-
-
-        }
-        public static void AddToList(ContactModel contact)
-        {
-            Contacts.Add(contact);
-            FileService.SaveToFile(JsonConvert.SerializeObject(Contacts));
-            Debug.WriteLine(contact.Text);
-            Debug.WriteLine(contactList.Count);
-            //    ContactList.Add(contact);
-
-        }
-
-        public static void RemoveFromList(ContactModel contact)
-        {
-            Contacts.Remove(contact);
-            FileService.SaveToFile(JsonConvert.SerializeObject(Contacts));
-        }
-        public static ObservableCollection<ContactModel> ContactList2()
-        {
-
-            var items = new ObservableCollection<ContactModel>();
-            foreach (var contact in ContactList)
+            try
             {
-                items.Add(contact);
+                contacts = JsonConvert.DeserializeObject<ObservableCollection<ContactModel>>(fileService.Read())!;
+
             }
-            return items;
+            catch { contacts = new ObservableCollection<ContactModel>(); }
         }
 
+
+
+        public static void AddToList(ContactModel model)
+        {
+            contacts.Add(model);
+            
+            Debug.WriteLine(model.FirstName);
+            fileService.Save(JsonConvert.SerializeObject(contacts));
+
+        }
+
+        public static void RemoveFromList(ContactModel model)
+        {
+            contacts.Remove(model);
+            fileService.Save(JsonConvert.SerializeObject(contacts));
+        }
+
+
+        public static ObservableCollection<ContactModel> Contacts()
+        {
+            return contacts;
+        }
+
+
+
+        private static ContactModel instance = new ContactModel();
+
+        public static ContactModel Instance { get { return instance; } }
+        public static void ShowList()
+        {
+            Debug.WriteLine(instance.ContactId);
+        }
 
     }
-
 }

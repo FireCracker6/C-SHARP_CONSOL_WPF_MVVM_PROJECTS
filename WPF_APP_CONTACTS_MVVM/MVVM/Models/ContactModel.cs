@@ -15,9 +15,12 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.Models
        
        
         public Guid ContactId { get; set; } = Guid.NewGuid();
-        public string Text { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
         public DateTime Created { get; set; } = DateTime.Now;
 
-        
+        public string DisplayName => $"{FirstName}";
+
+
+
     }
 }

@@ -10,47 +10,65 @@
                  d:DataContext="{d:DesignInstance Type=viewmodels:ContactsViewModel}"
           
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="600" d:DesignWidth="800"
            >
     <Grid Margin="40" >
         <Grid.RowDefinitions >
             <RowDefinition Height="auto" />
             <RowDefinition  />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="{Binding PageTitle}" FontSize="22" FontWeight="Medium" Margin="0 0 0 20" />
 
 
-        <ListView  Grid.Row="1" Grid.Column="0" x:Name="_view" ItemsSource="{Binding ContactList }" Background="MistyRose">
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+      
+        <ListView BorderThickness="0"   Grid.Row="0" x:Name="_view" ItemsSource="{Binding Contacts }" Background="MistyRose" >
 
             <ListView.ItemTemplate >
 
                 <DataTemplate>
-                    <StackPanel >
                         <Grid Background="Thistle" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="420" />
                                 <ColumnDefinition Width="200" />
                             </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" HorizontalAlignment="Left">
+                      
 
-                            <TextBlock Text="{Binding Text}" Grid.Column="0"/>
+                            <TextBlock Text="{Binding FirstName}" />
 
-                            <Button x:Name="btn_Remove" Content="Remove Contact" Click="Button_Click" Grid.Column="1" Padding="5" />
-                        </Grid>
+                          
+                       
                     </StackPanel>
-                </DataTemplate>
+                            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                                <Button x:Name="btn_Edit" Click="btn_Edit_Click" Content="Edit Contact"  Width="100"  Padding="5" Background="AliceBlue" Margin="5 0 0 0"/>
+                                <Button x:Name="btn_Remove" Content="Remove Contact" Click="btn_Remove_Click" Width="100"  Padding="5" Background="AliceBlue" Margin="5 0 0 0"/>
+                               
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
 
             </ListView.ItemTemplate>
 
 
         </ListView>
-        <StackPanel Grid.Row="2" DataContext="{Binding SelectedItem, ElementName=_view}"
-            Margin="0,24,0,0">
-            <TextBlock  Text="{Binding ContactId}"/>
-            <TextBlock  Text="{Binding Text}"/>
+            <StackPanel Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=_view}" Background="Lavender" Height="300"
+            Margin="0 24 0 0">
+                <TextBlock Text="Contact Details: " FontWeight="Bold" Margin="0 0 0 10" DataContext="{Binding SelectedItem, ElementName=_view}" />
+                <TextBlock  Text="{Binding ContactId}"/>
+                <TextBlock  Text="{Binding FirstName}"/>
+                <TextBox x:Name="fName" Text="{Binding FirstName}" />
+                <Button Command="{Binding RemoveCommand}" Content="Remove" />
 
-        </StackPanel>
+            </StackPanel>
+        </Grid>
+      
 
 
        

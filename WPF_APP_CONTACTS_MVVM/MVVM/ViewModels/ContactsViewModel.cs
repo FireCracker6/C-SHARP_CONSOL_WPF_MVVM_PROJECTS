@@ -14,25 +14,23 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.ViewModels
     public partial class ContactsViewModel : ObservableObject
     {
       
-
-        public ContactsViewModel()
-        {
-           
-           contacts =  ContactService.ContactList;
-            contactList = ContactService.ContactList;
-
-          
-
-          // Debug.WriteLine(AllContacts.Count);
-        }
-
         [ObservableProperty]
         private string pageTitle = "Contacts";
 
         [ObservableProperty]
-        private ObservableCollection<ContactModel> contacts;
-        [ObservableProperty]
-        private ObservableCollection<ContactModel> contactList;
+        private ObservableCollection<ContactModel> contacts = ContactService.Contacts();
+      
+        //[ObservableProperty]
+        //private ContactModel selectedContact = null!;
+
+        //[RelayCommand]
+        //public void Remove()
+        //{
+        //    ContactService.RemoveFromList(selectedContact);
+        //}
+  
+
+        
 
 
 

@@ -24,7 +24,7 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.ViewModels
         [RelayCommand]
         private void Add()
         {
-           ContactService.AddToList(new ContactModel { Text = Contact });
+           ContactService.AddToList(new ContactModel { FirstName = Contact });
             Contact = string.Empty;
         }
        

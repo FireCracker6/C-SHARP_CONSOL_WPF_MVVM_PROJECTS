@@ -66,6 +66,26 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.Views
             //    Debug.WriteLine(_SelectedPlayer.Text);
 
         }
+
+        private void btn_Edit_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+            var contact = (ContactModel)button.DataContext;
+
+            
+           
+            contact.FirstName = fName.Text;
+            ContactService.RemoveFromList(contact);
+            ContactService.AddToList(contact);
+
+        }
+
+        private void btn_Remove_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (Button)sender;
+            var contact = (ContactModel)button.DataContext;
+            ContactService.RemoveFromList(contact);
+        }
     }
 
 }
