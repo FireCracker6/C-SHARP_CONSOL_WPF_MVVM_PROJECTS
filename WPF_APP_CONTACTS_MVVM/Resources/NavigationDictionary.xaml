@@ -20,7 +20,7 @@
                             Margin="{TemplateBinding Margin}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Background="Transparent">
+                            Background="#f4eff4">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                     </Border>

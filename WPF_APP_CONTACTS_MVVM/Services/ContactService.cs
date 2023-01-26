@@ -34,7 +34,7 @@ namespace WPF_APP_CONTACTS_MVVM.Services
         {
             contacts.Add(model);
             
-            Debug.WriteLine(model.FirstName);
+            Debug.WriteLine(model.ArtistName);
             fileService.Save(JsonConvert.SerializeObject(contacts));
 
         }

@@ -15,24 +15,10 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.ViewModels
     {
       
         [ObservableProperty]
-        private string pageTitle = "Contacts";
+        private string pageTitle = "Artists & Associates";
 
         [ObservableProperty]
         private ObservableCollection<ContactModel> contacts = ContactService.Contacts();
-      
-        //[ObservableProperty]
-        //private ContactModel selectedContact = null!;
-
-        //[RelayCommand]
-        //public void Remove()
-        //{
-        //    ContactService.RemoveFromList(selectedContact);
-        //}
-  
-
-        
-
-
 
     }
 }
