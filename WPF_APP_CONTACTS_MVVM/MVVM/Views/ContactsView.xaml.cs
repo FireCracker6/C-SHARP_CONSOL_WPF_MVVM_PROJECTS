@@ -58,6 +58,7 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.Views
 
         private void _view_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            // Double Click once , and then click on artist in list to see and edit artist details
             _contactDetails.Visibility = Visibility.Visible;
         }
 

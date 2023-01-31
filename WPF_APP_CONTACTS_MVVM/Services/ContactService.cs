@@ -39,6 +39,8 @@ namespace WPF_APP_CONTACTS_MVVM.Services
 
         }
 
+      
+
         public static void RemoveFromList(ContactModel model)
         {
             contacts.Remove(model);

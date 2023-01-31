@@ -10,7 +10,7 @@
    
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Leahs Contacts List" Height="800" Width="800">
+        Title="Artists and Associates List" Height="800" Width="800">
     <Grid Background="#b7c7d4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />

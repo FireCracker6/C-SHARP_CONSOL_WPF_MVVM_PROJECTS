@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Documents;
 using CommunityToolkit.Mvvm.Input;
@@ -21,6 +22,7 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.Models
         public string RecordLabel { get; set; } = string.Empty;
         public string ArtistSongs { get; set; } = string.Empty;
         public DateTime Created { get; set; } = DateTime.Now;
+       public  List<ArtistSongsRecorded> ArtistSongsRecorded { get; set; } = new List<ArtistSongsRecorded>();
 
         public string DisplayName => $"{ArtistName} - {Associates}";
 
