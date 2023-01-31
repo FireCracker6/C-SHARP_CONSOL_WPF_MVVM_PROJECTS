@@ -5,9 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_APP_CONTACTS_MVVM", "WPF_APP_CONTACTS_MVVM\WPF_APP_CONTACTS_MVVM.csproj", "{EBC03F74-86DF-45B1-ACDD-1B2C4367C0F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_APP.Tests", "WPF_APP.Tests\WPF_APP.Tests.csproj", "{3D822714-7465-4B2C-BC8C-905730F70E5E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsList", "..\02_WPF\ContactsList\ContactsList.csproj", "{F6D19948-2B42-4EAD-AA9A-C9CDB7030335}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_APP.Tests", "WPF_APP.Tests\WPF_APP.Tests.csproj", "{3D822714-7465-4B2C-BC8C-905730F70E5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{3D822714-7465-4B2C-BC8C-905730F70E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D822714-7465-4B2C-BC8C-905730F70E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D822714-7465-4B2C-BC8C-905730F70E5E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6D19948-2B42-4EAD-AA9A-C9CDB7030335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6D19948-2B42-4EAD-AA9A-C9CDB7030335}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6D19948-2B42-4EAD-AA9A-C9CDB7030335}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6D19948-2B42-4EAD-AA9A-C9CDB7030335}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
