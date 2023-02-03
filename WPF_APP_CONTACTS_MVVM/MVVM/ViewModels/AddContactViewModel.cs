@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -19,7 +20,7 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.ViewModels
         private string pageTitle = "Add Artist";
 
         [ObservableProperty]
-        private string artist = string.Empty;
+        private string artistname = string.Empty;
         [ObservableProperty]
         private string associates = string.Empty;
         [ObservableProperty]
@@ -27,14 +28,15 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.ViewModels
         [ObservableProperty]
         private string artistsongs = string.Empty;
 
-
+      
 
         [RelayCommand]
         private void Add()
         {
-           ContactService.AddToList(new ContactModel { ArtistName = Artist, Associates = Associates, RecordLabel = Recordlabel, ArtistSongs = Artistsongs  });
-       MessageBox.Show(Artist.ToString() + " added");
-            Associates = string.Empty;
+           // ContactService.AddToList(new ContactModel { ArtistName = "Saxe" });
+         ContactService.AddToList(new ContactModel { ArtistName = Artistname, Associates = Associates, RecordLabel = Recordlabel, ArtistSongs = Artistsongs  });
+       MessageBox.Show(Artistname.ToString() + " added");
+          //  Associates = string.Empty;
             //Associates = string.Empty;
             //Recordlabel = string.Empty;
 

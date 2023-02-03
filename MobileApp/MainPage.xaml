@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MobileApp.MVVM.ViewModels"
+             xmlns:models="clr-namespace:MobileApp.MVVM.Models"
+             x:DataType="viewmodels:MainViewModel"
+             x:Class="MobileApp.MainPage">
+
+    <Grid RowDefinitions="80, auto, *, 60" ColumnDefinitions=".75*, .25*" ColumnSpacing="10" RowSpacing="50" Margin="20">
+        <Image Source="dotnet_bot.svg" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" />
+
+        <Entry Text="{Binding FirstName}" Grid.Row="1" Grid.Column="0" Placeholder="Enter a First Name..." />
+        <Button Text="Add a Contact" Command="{Binding AddCommand}" Grid.Row="1" Grid.Column="1" FontSize="8" Padding="2"/>
+
+        <CollectionView ItemsSource="{Binding ContactModels}" Grid.Row="2" Grid.ColumnSpan="2" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type models:ContactModel}">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Remove" CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel}}, Path=RemoveCommand}" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Padding="0, 5">
+                            <Frame>
+                                <Frame.GestureRecognizers>
+                                   
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:MainViewModel }}, Path=TapCommand}" />
+                                </Frame.GestureRecognizers>
+                                <Grid RowDefinitions="auto, auto">
+                                   
+                                    <Label Grid.Row="0" Text="{Binding FirstName}" Margin="5, 0" FontAttributes="Bold" />
+                                    <Label Grid.Row="1" Text="{Binding Id}" Margin="5, 0" FontSize="10"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

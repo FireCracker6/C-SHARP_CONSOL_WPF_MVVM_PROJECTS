@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_APP_CONTACTS_MVVM", "WP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_APP.Tests", "WPF_APP.Tests\WPF_APP.Tests.csproj", "{3D822714-7465-4B2C-BC8C-905730F70E5E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsList", "ContactsList\ContactsList.csproj", "{42058629-FC53-44AF-999B-E138700484D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobileApp", "MobileApp\MobileApp.csproj", "{003DD09B-E6C4-4667-A3BE-4CFC57EAACC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Artist_APP_MVVM", "Artist_APP_MVVM\Artist_APP_MVVM.csproj", "{64C96B44-DA56-41FC-8D65-62787472BCC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,20 @@ Global
 		{3D822714-7465-4B2C-BC8C-905730F70E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D822714-7465-4B2C-BC8C-905730F70E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D822714-7465-4B2C-BC8C-905730F70E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42058629-FC53-44AF-999B-E138700484D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42058629-FC53-44AF-999B-E138700484D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42058629-FC53-44AF-999B-E138700484D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42058629-FC53-44AF-999B-E138700484D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{003DD09B-E6C4-4667-A3BE-4CFC57EAACC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003DD09B-E6C4-4667-A3BE-4CFC57EAACC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{003DD09B-E6C4-4667-A3BE-4CFC57EAACC7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{003DD09B-E6C4-4667-A3BE-4CFC57EAACC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{003DD09B-E6C4-4667-A3BE-4CFC57EAACC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{003DD09B-E6C4-4667-A3BE-4CFC57EAACC7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{64C96B44-DA56-41FC-8D65-62787472BCC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C96B44-DA56-41FC-8D65-62787472BCC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C96B44-DA56-41FC-8D65-62787472BCC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C96B44-DA56-41FC-8D65-62787472BCC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

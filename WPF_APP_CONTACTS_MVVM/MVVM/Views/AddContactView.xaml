@@ -18,7 +18,7 @@
         <TextBlock Grid.Row="0" Text="{Binding PageTitle}" FontSize="22" FontWeight="Medium" Margin="0 0 0 20" />
         <StackPanel Grid.Row="1" Background="#c4becc" Margin="0" HorizontalAlignment="Stretch">
             <Label Content="Enter an artist name..." FontWeight="Medium" />
-            <TextBox Text="{Binding Artist }" Padding="5" Margin="0 2 0 5"  Background="#f4eff4" />
+            <TextBox Text="{Binding Artistname }" Padding="5" Margin="0 2 0 5"  Background="#f4eff4" />
             <Label Content="Enter a Band..."  FontWeight="Medium"/>
             <TextBox Text="{Binding Associates }" Padding="5" Margin="0 2 0 5"   Background="#f4eff4" />
             <Label Content="Enter a Record Label..."  FontWeight="Medium"/>

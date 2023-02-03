@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Artist_APP_MVVM.MVVM.Views.AddArtistsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Artist_APP_MVVM.MVVM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Column="0" Margin="20" Text="Add Artist"/>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="Artist Name" />
+            <TextBox Text="{Binding ArtistName}" Margin="0 5 0  10" Padding="3" />
+            <TextBlock Text="Associate" />
+            <TextBox Text="{Binding Associates}" Margin="0 5 0  10" Padding="3" />
+            <TextBlock Text="Record Label"/>
+            <TextBox Text="{Binding RecordLabel}" Margin="0 5 0  10" Padding="3" />
+            <TextBlock Text="Famous Song Title"  />
+            <TextBox Text="{Binding ArtistSong}" Margin="0 5 0  10" Padding="3" />
+
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <Button Command="{Binding AddCommand}" Content="Add Artist" Padding="5" />
+                <Button Command="{Binding CancelCommand}" Content="Cancel" Margin="10 0 0 0" Padding="5" />
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

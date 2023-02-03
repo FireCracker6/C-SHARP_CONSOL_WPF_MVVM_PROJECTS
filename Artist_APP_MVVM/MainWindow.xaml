@@ -1,0 +1,26 @@
+﻿<Window x:Class="Artist_APP_MVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:Artist_APP_MVVM.MVVM.ViewModels"
+        xmlns:views="clr-namespace:Artist_APP_MVVM.MVVM.Views"
+        xmlns:local="clr-namespace:Artist_APP_MVVM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <ContentControl Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewmodels:ArtistsViewModel}">
+                    <views:ArtistsView />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:AddArtistViewModel}">
+                    <views:AddArtistsView />
+                </DataTemplate>
+            </ContentControl.Resources>
+            
+        </ContentControl>
+
+    </Grid>
+</Window>

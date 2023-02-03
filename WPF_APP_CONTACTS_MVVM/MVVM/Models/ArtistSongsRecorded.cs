@@ -8,6 +8,7 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.Models
 {
     public partial class ArtistSongsRecorded
     {
+        public int ArtistId { get; set; } = new int();
        public Guid GuidSongNameId { get; set; }   = Guid.NewGuid();
        public string SongName { get; set; } = string.Empty;
        public ContactModel ArtistName { get; set; } = null!;
