@@ -26,15 +26,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-
             </Grid.RowDefinitions>
 
             <ListView BorderThickness="0"   Grid.Row="0" x:Name="_view" ItemsSource="{Binding Contacts }" Background="#8394a3" MouseDoubleClick="_view_MouseDoubleClick" >
 
-            <ListView.ItemTemplate >
+                <ListView.ItemTemplate >
 
-                <DataTemplate>
+                    <DataTemplate>
                         <Grid Background="#c4becc" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="420" />
@@ -45,21 +43,21 @@
 
                                 <TextBlock Text="{Binding DisplayName}"  FontWeight="Medium" />
 
-                          
-                       
-                    </StackPanel>
+
+
+                            </StackPanel>
                             <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
                                 <!--<Button x:Name="btn_Edit" Click="btn_Edit_Click" Content="Edit Contact"  Width="100"  Padding="5" Background="AliceBlue" Margin="5 0 0 0"/>-->
                                 <Button x:Name="btn_Remove" Content="Remove Artist" Click="btn_Remove_Click" Width="100"  Padding="5"  Background="#cbccd6" Margin="5 0 0 0"/>
-                               
+
                             </StackPanel>
                         </Grid>
                     </DataTemplate>
 
-            </ListView.ItemTemplate>
+                </ListView.ItemTemplate>
 
 
-        </ListView>
+            </ListView>
 
             <StackPanel Grid.Row="1" x:Name="_contactDetails" Visibility="Hidden" DataContext="{Binding SelectedItem, ElementName=_view}" Background="#6688a2" Height="300"
             Margin="0 24 0 0">
@@ -79,41 +77,7 @@
                     </Grid.ColumnDefinitions>
 
 
-
-                    <Label Content="Artist ID: " Grid.Column="0" Grid.Row="0" />
-                    <TextBlock  Text="{Binding ContactId}" Grid.Column="1" Grid.Row="0"/>
-                    <Label Content="Artist Name: "  Grid.Column="0" Grid.Row="1" />
-                    <TextBlock x:Name="_artist" Text="{Binding ArtistName}" Background="Linen" Grid.Column="1" Grid.Row="1" />
-                    <Label Content="Associates: "  Grid.Column="0" Grid.Row="2" />
-                    <TextBlock x:Name="_assocEdit" Text="{Binding Associates}" Background="Linen" Grid.Column="1" Grid.Row="2" />
-                    <Label Content="Record Label: "  Grid.Column="0" Grid.Row="3" />
-                    <TextBlock x:Name="_recordEdit" Text="{Binding RecordLabel}" Background="Linen" Grid.Column="1" Grid.Row="3" />
-                    <Label Content="Artist Songs: "  Grid.Column="0" Grid.Row="4" />
-                    <TextBlock x:Name="_songsEdit" Text="{Binding ArtistSongs}" Background="Linen" Grid.Column="1" Grid.Row="4" />
-                    <Button Click="btn_EditDetails_Click" Content="Edit Artist" Grid.Row="5" Grid.Column="1" Padding="5"   Background="#cbccd6" Margin="0 5 0 0" />
-                
-                </Grid>
-            </StackPanel>
-            
-            <StackPanel Grid.Row="1" x:Name="_contactEditDetails" Visibility="Hidden" DataContext="{Binding SelectedItem, ElementName=_view}" Background="#6688a2" Height="300"
-            Margin="0 24 0 0">
-                <TextBlock Text="Artist Details: " FontSize="14" FontWeight="Bold" Margin="5 5 3 10" DataContext="{Binding SelectedItem, ElementName=_view}"  />
-                <Grid Margin="10" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-
-                    <Label Content="Artist ID: " Grid.Column="0" Grid.Row="0" />
+                    <Label Content="Contact ID: " Grid.Column="0" Grid.Row="0" />
                     <TextBlock  Text="{Binding ContactId}" Grid.Column="1" Grid.Row="0"/>
                     <Label Content="Artist Name: "  Grid.Column="0" Grid.Row="1" />
                     <TextBox x:Name="fName" Text="{Binding ArtistName}" Background="Linen" Grid.Column="1" Grid.Row="1" />
@@ -123,17 +87,15 @@
                     <TextBox x:Name="_record" Text="{Binding RecordLabel}" Background="Linen" Grid.Column="1" Grid.Row="3" />
                     <Label Content="Artist Songs: "  Grid.Column="0" Grid.Row="4" />
                     <TextBox x:Name="_songs" Text="{Binding ArtistSongs}" Background="Linen" Grid.Column="1" Grid.Row="4" />
-
-
-                    <Button x:Name="btn_ArtistUpdate" Click="btn_Edit_Click" Content="Update Artist" Grid.Row="5" Grid.Column="1" Padding="5"  Background="#cbccd6" Margin="0 5 0 0" />
+                    <Button Click="btn_Edit_Click" Content="Update Artist" Grid.Row="5" Grid.Column="1" Padding="5"  Background="#cbccd6" Margin="0 5 0 0" />
                 </Grid>
             </StackPanel>
         </Grid>
-      
 
 
-       
+
+
     </Grid>
 
-  
+
 </UserControl>

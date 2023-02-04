@@ -12,7 +12,7 @@ namespace Artist_APP_MVVM.Services
 {
     public  class ArtistService
     {
-        private static ObservableCollection<ArtistModel> artists;
+        private static ObservableCollection<ArtistModel> artists ;
 
 
         private static FileService fileService = new FileService($@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\artistsNew.json");
@@ -32,10 +32,18 @@ namespace Artist_APP_MVVM.Services
 
         public static void AddToList(ArtistModel model)
         {
-          
+            try
+            {
+                artists = JsonConvert.DeserializeObject<ObservableCollection<ArtistModel>>(fileService.Read())!;
+
+            }
+            catch { artists = new ObservableCollection<ArtistModel>(); }
+
+            //  artists.Add(model);
+
             Debug.WriteLine(model.ArtistName);
             fileService.Save(JsonConvert.SerializeObject(artists));
-            artists.Add(model);
+          
         }
         public static void UpdateArtist(ArtistModel model)
         {

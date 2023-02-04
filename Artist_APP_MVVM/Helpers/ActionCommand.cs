@@ -11,7 +11,7 @@ namespace Artist_APP_MVVM.Helpers
         private readonly Action<object> _action;
         private readonly Func<object, bool> _canExecute;
 
-        public ActionCommand(Action<object> action) : this (action, null)
+        public ActionCommand(Action<object> action) : this (action, null!)
         {
             
         }
@@ -24,7 +24,7 @@ namespace Artist_APP_MVVM.Helpers
 
         public override void Execute(object? parameter)
         {
-           _action(parameter);
+           _action(parameter!);
         }
     }
 }

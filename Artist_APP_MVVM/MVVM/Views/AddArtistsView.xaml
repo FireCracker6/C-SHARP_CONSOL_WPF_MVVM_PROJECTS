@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Artist_APP_MVVM.MVVM.Views"
+             xmlns:viewmodel="clr-namespace:Artist_APP_MVVM.MVVM.ViewModels"
+                d:DataContext="{d:DesignInstance Type=viewmodel:AddArtistViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -13,6 +15,8 @@
         </Grid.ColumnDefinitions>
         
         <TextBlock Grid.Column="0" Margin="20" Text="Add Artist"/>
+       
+        
 
         <StackPanel Grid.Column="1">
             <TextBlock Text="Artist Name" />

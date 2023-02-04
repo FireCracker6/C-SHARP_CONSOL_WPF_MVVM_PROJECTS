@@ -33,12 +33,13 @@ namespace WPF_APP_CONTACTS_MVVM.MVVM.ViewModels
         [RelayCommand]
         private void Add()
         {
-           // ContactService.AddToList(new ContactModel { ArtistName = "Saxe" });
+
          ContactService.AddToList(new ContactModel { ArtistName = Artistname, Associates = Associates, RecordLabel = Recordlabel, ArtistSongs = Artistsongs  });
        MessageBox.Show(Artistname.ToString() + " added");
-          //  Associates = string.Empty;
-            //Associates = string.Empty;
-            //Recordlabel = string.Empty;
+            Artistname = string.Empty;
+            Associates = string.Empty;
+            Recordlabel = string.Empty;
+            Artistsongs = string.Empty;
 
         }
        
