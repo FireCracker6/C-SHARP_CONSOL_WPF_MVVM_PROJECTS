@@ -1,1 +1,1 @@
-"# MVVM-DELETE2" 
+In this repository there are several projects. There is one consol application to add employees, or customers, and remove them. There is an Arists and Associates list which is the main MVVM application. There is a test that are built on the Artists and Associates list. There are two other experimental projects that builds on NavigationStore and Depedency Injection, but this project is not finished. There is also a MAUI app project that neither is finished at this point in time.
